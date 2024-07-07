@@ -224,13 +224,24 @@ button:active {
 }
 
 /* Media queries pour les tailles d'écran */
+@media only screen and (max-width: 1366px) {
+    .video-container {
+        grid-template-columns: repeat(4, 1fr); /* Quatre colonnes pour les iPads Pro */
+    }
+
+    .video img {
+        width: 100%; /* Ajuster les images pour qu'elles remplissent leur conteneur */
+        height: auto;
+    }
+}
+
 @media only screen and (max-width: 1024px) {
     .video-container {
         grid-template-columns: repeat(3, 1fr); /* Trois colonnes pour les tablettes */
     }
 
     .video img {
-        width: 120%; /* Agrandir les images à 120% pour les iPads */
+        width: 100%; /* Ajuster les images pour qu'elles remplissent leur conteneur */
         height: auto;
     }
 }
@@ -262,3 +273,4 @@ button:active {
         margin-bottom: 20px; /* Ajout d'une marge en bas */
     }
 }
+
