@@ -1,25 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const allImages = document.querySelectorAll('img');
-    const spinnerContainer = document.querySelector('.spinner-container');
 
-    let imagesLoaded = 0;
-
-    function checkAllImagesLoaded() {
-        imagesLoaded++;
-        if (imagesLoaded === allImages.length) {
-            spinnerContainer.style.display = 'none';
-        }
-    }
-
-    allImages.forEach(img => {
-        img.setAttribute('loading', 'lazy');
-        if (img.complete) {
-            checkAllImagesLoaded();
-        } else {
-            img.addEventListener('load', checkAllImagesLoaded);
-        }
-    });
-});
 
 
 
