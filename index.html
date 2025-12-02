@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Catalogue — Prototype</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="initial-loader">Chargement des vidéos…</div>
+
+    <div class="page simple">
+      <!-- HEADER / CONTROLES -->
+      <header class="simple-header" role="banner">
+        <div class="container">
+          <div
+            class="view-toggle"
+            role="tablist"
+            aria-label="Choix d'affichage"
+          >
+            <button
+              id="btn-external"
+              class="btn"
+              data-view="external"
+              aria-pressed="true"
+            >
+              Externe
+            </button>
+
+            <button
+              id="btn-local"
+              class="btn"
+              data-view="local"
+              aria-pressed="false"
+            >
+              Local
+            </button>
+
+            <form id="search-form" class="search">
+              <input
+                id="search-input"
+                type="text"
+                placeholder="Rechercher…"
+                autocomplete="off"
+              />
+              <button class="search-btn" type="submit">🔍</button>
+            </form>
+
+            <button
+              id="btn-favorites"
+              class="btn"
+              role="tab"
+              aria-pressed="false"
+            >
+              Favoris
+            </button>
+
+            <button id="btn-categories" type="button" class="btn">
+              Catégories
+            </button>
+
+            <button id="main-action" class="btn btn-alt">Aléatoire</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENU PRINCIPAL -->
+      <main>
+        <div class="content-shell">
+          <section id="video-grid" class="video-grid"></section>
+        </div>
+      </main>
+    </div>
+    <!-- MENU CATÉGORIES (plein écran) -->
+    <div id="categories-overlay" class="categories-overlay">
+      <div class="categories-content">
+        <h2 class="categories-title">Catégories</h2>
+        <div id="categories-list" class="categories-list">
+          <!-- catégories injectées en JS -->
+        </div>
+
+        <div class="categories-footer">
+          <button
+            type="button"
+            id="categories-apply"
+            class="btn-categories-apply"
+          >
+            Appliquer les filtres
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Overlay lecteur vidéo local -->
+    <div id="local-player" class="local-player">
+      <button
+        id="local-player-close"
+        class="local-player-close"
+        type="button"
+        aria-label="Fermer la vidéo"
+      >
+        ×
+      </button>
+
+      <div class="local-player-inner">
+        <video id="local-video" controls>
+          <source id="local-video-source" src="" type="video/mp4" />
+          Votre navigateur ne supporte pas la vidéo HTML5.
+        </video>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
