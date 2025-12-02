@@ -27,27 +27,16 @@ body {
 
 /* ========== LOADER INITIAL ========== */
 
+/* On désactive complètement le mode "initial-loading" */
 body.is-initial-loading .content-shell,
 body.is-initial-loading .simple-footer {
-  opacity: 0;
-  pointer-events: none;
+  opacity: 1;
+  pointer-events: auto;
 }
 
+/* Le loader existe toujours mais est caché */
 .initial-loader {
-  position: fixed;
-  inset: 0;
   display: none;
-  align-items: center;
-  justify-content: center;
-  background: #0f0f0f;
-  color: #ffffff;
-  z-index: 999;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-body.is-initial-loading .initial-loader {
-  display: flex;
 }
 
 /* ========== HEADER & CONTROLES ========== */
